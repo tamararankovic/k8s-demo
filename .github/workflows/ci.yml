@@ -63,7 +63,7 @@ jobs:
       - name: tmp
         run: |
           kubectl config view
-          kubectl auth whoami
+          kubectl auth whoami --insecure-skip-tls-verify
 
       # Run kubectl command
       - name: Run kubectl command

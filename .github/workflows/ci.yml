@@ -62,8 +62,8 @@ jobs:
 
       - name: tmp
         run: |
-          sudo kubectl config view
           sudo kubectl config use-context minikube
+          sudo kubectl config view
           sudo kubectl auth whoami --insecure-skip-tls-verify
 
       # Run kubectl command

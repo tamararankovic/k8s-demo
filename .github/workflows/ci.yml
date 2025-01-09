@@ -44,17 +44,18 @@ jobs:
       - name: Copy files
         run: |
           sudo mkdir -p /.minikube
+          sudo mkdir -p $HOME/.kube/config
           sudo cp -r .minikube/ /.minikube/
-          sudo cp kubeconfig.yaml $HOME/kubeconfig.yaml
+          sudo cp kubeconfig.yaml $HOME/.kube/config
         
       # Set up Kubernetes CLI
       - name: Set up kubectl
         uses: azure/setup-kubectl@v1
 
       # Configure kubectl to access your Kubernetes cluster
-      - name: Set up kubeconfig
-        run: |
-          export KUBECONFIG=$HOME/kubeconfig.yaml
+      # - name: Set up kubeconfig
+      #   run: |
+      #     export KUBECONFIG=$HOME/kubeconfig.yaml
 
       - name: tmp
         run: |

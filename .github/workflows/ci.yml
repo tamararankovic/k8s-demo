@@ -66,4 +66,4 @@ jobs:
       # Run kubectl command
       - name: Run kubectl command
         run: |
-          kubectl get pods
+          kubectl get pods --insecure-skip-tls-verify

@@ -43,9 +43,11 @@ jobs:
       # Copy files (Add your file copy logic here)
       - name: Copy files
         run: |
-          sudo mkdir -p /.minikube
+          sudo mkdir -p /.minikube/profiles/minikube
+          sudo cp .minikube/ca.crt /.minikube/ca.crt
+          sudo cp .minikube/profiles/minikube/client.crt /.minikube/profiles/minikube/client.crt
+          sudo cp .minikube/profiles/minikube/client.key /.minikube/profiles/minikube/client.key
           sudo mkdir -p $HOME/.kube
-          sudo cp -r .minikube/ /.minikube/
           sudo cp kubeconfig.yaml $HOME/.kube/config
         
       # Set up Kubernetes CLI

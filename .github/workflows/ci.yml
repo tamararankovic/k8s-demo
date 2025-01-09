@@ -52,8 +52,12 @@ jobs:
       # Configure kubectl to access your Kubernetes cluster
       - name: Set up kubeconfig
         run: |
-          echo "${{ secrets.KUBE_CONFIG }}" > kubeconfig.yaml
-          export KUBECONFIG=kubeconfig.yaml
+          echo "${{ secrets.KUBE_CONFIG }}" > $HOME/.kube/config # kubeconfig.yaml
+          # export KUBECONFIG=kubeconfig.yaml
+
+      - name: tmp
+        run: |
+          sudo cat $HOME/.kube/config
 
       # Run kubectl command
       - name: Run kubectl command

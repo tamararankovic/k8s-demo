@@ -59,8 +59,7 @@ jobs:
 
       - name: tmp
         run: |
-          sudo cat $HOME/.kube/config
-          kubectl config view
+          sudo ls /.minikube
 
       # Run kubectl command
       - name: Run kubectl command

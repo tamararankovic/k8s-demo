@@ -64,7 +64,7 @@ jobs:
 
       - name: tmp
         run: |
-          sudo kubectl config set-cluster minikube --server=https://bec2-79-101-89-183.ngrok-free.app --certificate-authority=/.minikube/ca.crt
+          sudo kubectl config set-cluster minikube --server=https://5548-79-101-89-183.ngrok-free.app --certificate-authority=/.minikube/ca.crt
           sudo kubectl config set-credentials minikube --token=eyJhbGciOiJSUzI1NiIsImtpZCI6ImpwODdKdXNYeFBIOU1ORFpHYXVUa2Z0cUpGckU1UU1sWklkOWhVVk85ZUUifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImRlZmF1bHQtdG9rZW4iLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGVmYXVsdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjcxMjRmOGU3LTAxNjktNGUwYy1iNzY4LWY2MmU0MDA0MjM3NSIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0OmRlZmF1bHQifQ.aF0pAmA2oZVJzMK8_iW2HRCZc4OSu9nLiIEd_DbwcqGGGV99ha3ZPpIdRsump1K97G225asyAOSLnExBvk7fWm1QSx2xup5TuCcb47XtAdyakFYiKqNQpSP0MMYw8BkJl8ZpyjkcEVUGc7BjyCGJDkrVIkyPuzT1kz4PSKwZB4QZUQG_5NCbk_HdkRHgal3igUH1set_L0YTOf4AF4eLwGLP4v-500XHfwN69HA6XfXjcYg1APbqxcfUmfhaCesLldhv2BZz9LxSiVjdL0L7mp-Qwj7igx3F0ajyHcMTWAoXqLPJLSXCzZLiIWZeCYE0vjNmdyrhPQnmmW6Z-71ycA
           sudo kubectl config set-context minikube --cluster=minikube --user=minikube
           sudo kubectl config use-context minikube

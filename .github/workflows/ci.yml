@@ -63,6 +63,7 @@ jobs:
       - name: tmp
         run: |
           kubectl config view
+          kubectl auth whoami
 
       # Run kubectl command
       - name: Run kubectl command

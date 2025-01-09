@@ -54,6 +54,8 @@ jobs:
       # Set up Kubernetes CLI
       - name: Set up kubectl
         uses: azure/setup-kubectl@v1
+        with:
+          version: 'v1.27.4'
 
       # Configure kubectl to access your Kubernetes cluster
       # - name: Set up kubeconfig

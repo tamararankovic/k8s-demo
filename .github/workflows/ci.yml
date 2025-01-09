@@ -38,12 +38,12 @@ jobs:
       # Create target directory if it doesn't exist
       - name: Create target directory
         run: |
-          mkdir -p /.minikube
+          sudo mkdir -p /.minikube
 
       # Copy files (Add your file copy logic here)
       - name: Copy files
         run: |
-          cp -r .minikube/ /.minikube/
+          sudo cp -r .minikube/ /.minikube/
         
       # Set up Kubernetes CLI
       - name: Set up kubectl

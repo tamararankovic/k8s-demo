@@ -26,3 +26,36 @@ jobs:
        context:
        push: true
        tags: tamarar/k8s-demo:latest
+
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Create target directory if it doesn't exist
+      - name: Create target directory
+        run: |
+          mkdir -p /.minikube
+
+      # Copy files (Add your file copy logic here)
+      - name: Copy files
+        run: |
+          cp -r .minikube/ /.minikube/
+        
+      # Set up Kubernetes CLI
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v1
+
+      # Configure kubectl to access your Kubernetes cluster
+      - name: Set up kubeconfig
+        run: |
+          echo "${{ secrets.KUBE_CONFIG }}" > kubeconfig.yaml
+          export KUBECONFIG=kubeconfig.yaml
+
+      # Run kubectl command
+      - name: Run kubectl command
+        run: |
+          kubectl get pods

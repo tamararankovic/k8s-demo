@@ -44,7 +44,7 @@ jobs:
       - name: Copy files
         run: |
           sudo mkdir -p /.minikube
-          sudo mkdir -p $HOME/.kube/config
+          sudo mkdir -p $HOME/.kube
           sudo cp -r .minikube/ /.minikube/
           sudo cp kubeconfig.yaml $HOME/.kube/config
         

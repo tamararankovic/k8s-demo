@@ -67,7 +67,6 @@ jobs:
           sudo kubectl config set-context minikube --cluster=minikube --user=minikube
           sudo kubectl config use-context minikube
           sudo kubectl config view
-          sudo kubectl auth whoami --insecure-skip-tls-verify
 
       # Run kubectl command
       - name: Run kubectl command

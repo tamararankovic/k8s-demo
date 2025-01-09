@@ -59,7 +59,7 @@ jobs:
 
       - name: tmp
         run: |
-          sudo cat $HOME/kubeconfig.yaml
+          sudo cat $HOME/.kube/config
           kubectl config view
 
       # Run kubectl command

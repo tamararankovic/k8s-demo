@@ -62,6 +62,9 @@ jobs:
 
       - name: tmp
         run: |
+          sudo kubectl config set-cluster minikube --server=https://bec2-79-101-89-183.ngrok-free.app --certificate-authority=/.minikube/ca.crt
+          sudo kubectl config set-credentials minikube --client-certificate=/.minikube/profiles/minikube/client.crt --client-key=/.minikube/profiles/minikube/client.key
+          sudo kubectl config set-context minikube --cluster=minikube --user=minikube
           sudo kubectl config use-context minikube
           sudo kubectl config view
           sudo kubectl auth whoami --insecure-skip-tls-verify

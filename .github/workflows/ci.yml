@@ -54,7 +54,6 @@ jobs:
       # Configure kubectl to access your Kubernetes cluster
       - name: Set up kubeconfig
         run: |
-          # echo "${{ secrets.KUBE_CONFIG }}" > $HOME/kubeconfig.yaml
           export KUBECONFIG=$HOME/kubeconfig.yaml
 
       - name: tmp

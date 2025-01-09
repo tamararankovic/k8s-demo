@@ -49,6 +49,7 @@ jobs:
           sudo cp .minikube/profiles/minikube/client.key /.minikube/profiles/minikube/client.key
           sudo mkdir -p $HOME/.kube
           sudo cp kubeconfig.yaml $HOME/.kube/config
+          sudo chown $(id -u):$(id -g) $HOME/.kube/config
         
       # Set up Kubernetes CLI
       - name: Set up kubectl
@@ -66,4 +67,4 @@ jobs:
       # Run kubectl command
       - name: Run kubectl command
         run: |
-          kubectl get pods --insecure-skip-tls-verify
+          kubectl get pods -v=10 --insecure-skip-tls-verify

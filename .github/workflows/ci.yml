@@ -62,7 +62,7 @@ jobs:
 
       - name: tmp
         run: |
-          kubectl config view
+          kubectl config view 
 
       # Run kubectl command
       - name: Run kubectl command

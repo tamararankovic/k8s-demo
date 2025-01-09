@@ -31,7 +31,7 @@ func main() {
 	}
 
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		resp := fmt.Sprintf("V2: hello from your first k8s-deployed app!\nHostname: %s", os.Getenv("HOSTNAME"))
+		resp := fmt.Sprintf("V3: hello from your first k8s-deployed app!\nHostname: %s", os.Getenv("HOSTNAME"))
 		dbNameEnv := os.Getenv("DB_NAME")
 		if len(dbNameEnv) > 0 {
 			dbName = dbNameEnv
